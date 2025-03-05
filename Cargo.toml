@@ -3,9 +3,9 @@ members = ["rust/sdk", "callback/rust/sdk"]
 resolver = "2"
 
 [workspace.dependencies]
-anchor-lang = { version = "0.30.1", branch = "master", git = "https://github.com/coral-xyz/anchor.git" }
-anchor-spl = { version = "0.30.1", branch = "master", git = "https://github.com/coral-xyz/anchor.git" }
-anchor-client = { version = "0.30.1", branch = "master", git = "https://github.com/coral-xyz/anchor.git" }
+anchor-lang = { version = "0.30.1", rev = "8b391aa278387b6f6ce3133453619a175544631e", git = "https://github.com/coral-xyz/anchor.git" }
+anchor-spl = { version = "0.30.1", rev = "8b391aa278387b6f6ce3133453619a175544631e", git = "https://github.com/coral-xyz/anchor.git" }
+anchor-client = { version = "0.30.1", rev = "8b391aa278387b6f6ce3133453619a175544631e", git = "https://github.com/coral-xyz/anchor.git" }
 ed25519-dalek = "1.0.1"
 solana-cli-config = "2.2.1"
 rand = "0.9.0"
