@@ -10,6 +10,7 @@ use orao_solana_vrf::state::NetworkState;
 use orao_solana_vrf::CONFIG_ACCOUNT_SEED;
 use orao_solana_vrf::RANDOMNESS_ACCOUNT_SEED;
 use state::PlayerState;
+use anchor_client::ThreadSafeSigner;
 
 declare_id!("DTHCPBTw6tFZDwbiSzKXXK8wQ7n7v5zJAH3Ex3uvoSK5");
 
@@ -132,7 +133,7 @@ pub async fn spin_and_pull_the_trigger<
 >(
     roulette: &'a anchor_client::Program<C>,
     vrf: &anchor_client::Program<C>,
-) -> std::result::Result<anchor_client::RequestBuilder<'a, C>, anchor_client::ClientError> {
+) -> std::result::Result<anchor_client::RequestBuilder<'a, C, Arc<dyn ThreadSafeSigner>>, anchor_client::ClientError> {
     let seed = rand::random();
 
     // roulette accounts

@@ -1,13 +1,15 @@
 [workspace]
-members = ["rust/sdk", "rust/examples/off-chain", "callback/rust/sdk"]
-exclude = ["rust/examples/cpi", "callback/rust/examples/cpi"]
+members = ["rust/sdk", "callback/rust/sdk"]
 resolver = "2"
 
 [workspace.dependencies]
-anchor-lang = "0.30.1"
-anchor-spl = "0.30.1"
-anchor-client = { version = "0.30.1" }
-ed25519-dalek = { version = "1.0.1" }
-solana-cli-config = { version = "1.18" }
-rand = { version = "0.8" }
-bs58 = "0.4"
+anchor-lang = { version = "0.30.1", branch = "master", git = "https://github.com/coral-xyz/anchor.git" }
+anchor-spl = { version = "0.30.1", branch = "master", git = "https://github.com/coral-xyz/anchor.git" }
+anchor-client = { version = "0.30.1", branch = "master", git = "https://github.com/coral-xyz/anchor.git" }
+ed25519-dalek = "1.0.1"
+solana-cli-config = "2.2.1"
+rand = "0.9.0"
+bs58 = "0.5.1"
+tokio = "1.43.0"
+thiserror = "2.0.12"
+byteorder = "1.4.3"

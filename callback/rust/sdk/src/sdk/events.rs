@@ -43,6 +43,7 @@ impl Event {
     ///     in case of unknown event
     pub fn try_from_bytes(mut bytes: &[u8]) -> io::Result<Self> {
         let discriminator = <[u8; 8] as BorshDeserialize>::deserialize(&mut bytes)?;
+        let discriminator: &[u8] = &discriminator;
         match discriminator {
             crate::events::CallbackUpdated::DISCRIMINATOR => {
                 crate::events::CallbackUpdated::deserialize(&mut bytes).map(Self::CallbackUpdated)
